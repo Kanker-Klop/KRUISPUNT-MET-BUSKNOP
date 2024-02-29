@@ -9,6 +9,7 @@ void setup() {
   for (pinsetup = 3; pinsetup<9; pinsetup++) {
     digitalWrite(pinsetup, LOW);
   }
+  Serial.begin(9600);
 }
 int hetlichtdataanis = 3;
 int voriglicht = 8;
@@ -58,6 +59,7 @@ void loop() {
       busvoorrangknop = digitalRead(2);
     if ((busvoorrangknop == 0) && digitalRead(6)) {
       flakk = millis();
+      Serial.print("ER IS OP DE KNOP GERUKT");
       hetlichtdataanis = 7;
       voriglicht = 6;
       interval = 2000;
